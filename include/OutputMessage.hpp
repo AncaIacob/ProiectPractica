@@ -7,6 +7,15 @@
 using std::byte;
 using std::vector;
 
+enum MessageType
+{
+    Invalid,
+    Data1,
+    Data2,
+    Data3,
+    End
+};
+
 class OutputMessage 
 {
     public:

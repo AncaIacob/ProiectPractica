@@ -5,18 +5,20 @@
 #include <string>
 #include <vector>
 #include <cstddef>
+#include <netinet/in.h>
 
 class ClientSocket
 {
 public:
     ClientSocket(std::string address, int port);
+    ClientSocket(int fd);
     ~ClientSocket();
 
     operator bool();
     bool connect();
 
-    void send(std::vector<std::byte> message);
-    void receive(std::vector<std::byte> message);
+    void send(std::vector<std::byte> &message);
+    void receive();
 
 private:
     int m_fd;

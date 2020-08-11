@@ -30,6 +30,6 @@ void ClientSocket::send(std::vector<std::byte> message)
 
 }
 void ClientSocket::receive(std::vector<std::byte> message)
-{
+{ 
 
 }

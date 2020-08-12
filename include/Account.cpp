@@ -28,6 +28,7 @@ Account::Account(std::string name, std::string password)
    {   
        std::cout<<"Enter the sum you want to withdraw ";
        std::cin>>sum;
+       
        if(sum <=  balance)
        {
            balance= balance - sum;

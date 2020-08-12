@@ -12,9 +12,11 @@ using std::vector;
 enum MessageType
 {
     Invalid,
-    Data1,
-    Data2,
-    Data3,
+    Register,
+    Login,
+    Query,
+    Deposit,
+    Withdraw,
     End
 };
 

@@ -9,12 +9,12 @@ using std::vector;
 
 InputMessage::InputMessage(const vector<byte>& headerBuffer)
 {
-    m_header = headerBuffer;
+    m_header.deserialize(headerBuffer);
 }
 
 MessageType InputMessage::getType()
 {
-    return m_header;
+    return m_header.getType();
 }
 
 void InputMessage::setPayload(const vector<byte>& payloadBuffer)

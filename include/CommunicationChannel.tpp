@@ -1,6 +1,9 @@
 #include "CommunicationChannel.hpp"
 
 #include <cstddef>
+#include <vector>
+
+using std::vector;
 
 template <typename TChannel>
 CommunicationChannel<TChannel>::CommunicationChannel(TChannel channel)
@@ -9,19 +12,20 @@ CommunicationChannel<TChannel>::CommunicationChannel(TChannel channel)
 }
 
 template <typename TChannel>
-bool sendMessage(OutputMessage msg)
+bool CommunicationChannel<TChannel>::sendMessage(OutputMessage msg)
 {
-    if (msg == m_channel.send(getHeader()))
+    if ((msg.getHeader() == m_channel.send(getHeader())) && ((msg.getPayload() == m_channel.send(getPayload()))
         return true;
     else 
         return false;    
 }
 
 template <typename TChannel>
-bool receiveMessage(InputMessage msg)
+InputMessage CommunicationChannel<TChannel>::receiveMessage()
 {   
-    if (msg == m_channel.receive(getHeader()))
-        return true;
-    else 
-        return false;   
+    InputMessage msg;
+    vector<byte> vecB;
+    
+    msg = m_channel.receive(vecB);
+    return msg; 
 }

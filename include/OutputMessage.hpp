@@ -10,9 +10,11 @@ using std::vector;
 enum MessageType
 {
     Invalid,
-    Data1,
-    Data2,
-    Data3,
+    Register,
+    Login,
+    Query,
+    Deposit,
+    Withdraw,
     End
 };
 
@@ -20,13 +22,13 @@ class OutputMessage
 {
     public:
         template <typename TPayload>
-        void OutputMessage(MessageType type);
+        OutputMessage(MessageType type);
 
-        template <typename TPayload>
-        void OutputMessage(MessageType type, TPayload payload);
+        template <typename THeader, typename TPayload>
+        OutputMessage(const THeader& header, const TPayload& payload);
 
-        const vector<byte>& getHeader();
-        const vector<byte>& getPayload();
+        const vector<byte>& getHeader() const;
+        const vector<byte>& getPayload() const;
 
     private:
         vector<byte> m_headerBuffer;

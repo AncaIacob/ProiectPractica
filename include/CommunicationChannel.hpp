@@ -1,8 +1,8 @@
 #ifndef COMMUNICATIONCHANNEL_HPP
 #define COMMUNICATIONCHANNEL_HPP
 
-#include "InputChannel.hpp"
-#include "OutputChannel.hpp"
+#include "InputMessage.hpp"
+#include "OutputMessage.hpp"
 
 #include <cstddef>
 
@@ -13,7 +13,7 @@ class CommunicationChannel
         CommunicationChannel(TChannel channel);
 
         bool sendMessage(OutputMessage msg);
-        bool receiveMessage(InputMessage msg);
+        InputMessage receiveMessage();
 
     private:
         TChannel m_channel;

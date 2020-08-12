@@ -34,11 +34,14 @@ set(HEADERS
     
 	include/ClientSocket.hpp
 	include/ServerSocket.hpp
+	include/Server.hpp
+	include/Client.hpp
     
 )
 
 set(INCLUDE_DIRECTORIES
 	PUBLIC include/
+	PUBLIC include/TaskSchedulerStuff/
 )
 
 

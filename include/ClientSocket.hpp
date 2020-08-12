@@ -18,7 +18,7 @@ public:
     bool connect();
 
     void send(std::vector<std::byte> &message);
-    void receive();
+    void receive(std::vector<std::byte> &buffer);
 
 private:
     int m_fd;

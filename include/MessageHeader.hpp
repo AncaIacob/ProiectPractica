@@ -23,7 +23,6 @@ class MessageHeader
     private:
     MessageType m_type;
     std::size_t m_payloadSize;
-
 };
 
 #include "MessageHeader.cpp"

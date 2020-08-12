@@ -61,9 +61,8 @@ void ClientSocket::send(std::vector<std::byte> &message)
 }
 <<<<<<< HEAD
 void ClientSocket::receive(std::vector<std::byte> message)
-{ 
-=======
->>>>>>> 843c64c143ee528e4331b5bb23cce0b875ac869d
+{
+} 
 
 void ClientSocket::receive()
 {

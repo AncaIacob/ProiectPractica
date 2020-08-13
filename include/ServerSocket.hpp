@@ -5,19 +5,21 @@
 #include <string>
 #include <vector>
 #include <cstddef>
+#include <netinet/in.h>
 
 class ServerSocket
 {
 public:
-    ServerSocket(std::string address, std::size_t port);
+    ServerSocket(int port);
     ~ServerSocket();
 
     ClientSocket accept();
+    // void listen(int backlog);
 
 private:
     std::size_t m_fd;
-    std::string m_address;
     std::string m_port;
+    struct sockaddr_in m_address;
 };
 
 #include "ServerSocket.cpp"
